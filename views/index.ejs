@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 01 de base de datos 2</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Estudiantes</h1>
+
+    <ul class="student-list">
+      <% estudiantes.forEach(estudiante => { %>
+          <li class="student-item" data-id="<%= estudiante.id %>">
+              <strong><%= estudiante.nombres %> <%= estudiante.apellidos %></strong><br>
+              Código: <%= estudiante.codigo %><br>
+              EP: <%= estudiante.ep %>
+              <form action="/estudiantes/<%= estudiante.id %>/eliminar" method="post">
+                  <button type="submit">Eliminar</button>
+              </form>
+              <button type="button" onclick="habilitarEdicion('<%= estudiante.id %>')">Editar</button>
+              <button class="save-button" style="display: none;" onclick="guardarEdicion('<%= estudiante.id %>')">Guardar</button>
+              <input type="text" id="nombres_<%= estudiante.id %>" name="nombres" value="<%= estudiante.nombres %>" style="display: none;">
+              <input type="text" id="apellidos_<%= estudiante.id %>" name="apellidos" value="<%= estudiante.apellidos %>" style="display: none;">
+              <input type="text" id="codigo_<%= estudiante.id %>" name="codigo" value="<%= estudiante.codigo %>" style="display: none;">
+              <input type="text" id="ep_<%= estudiante.id %>" name="ep" value="<%= estudiante.ep %>" style="display: none;">
+          </li>
+      <% }); %>
+  </ul>
+  
+
+    <div class="form-container">
+      <h2>Agregar Estudiante</h2>
+      <form action="/estudiantes" method="post">
+        <input type="text" name="nombres" placeholder="Nombres">
+        <br>
+        <input type="text" name="apellidos" placeholder="Apellidos">
+        <br>
+        <input type="text" name="codigo" placeholder="Código">
+        <br>
+        <input type="text" name="ep" placeholder="EP">
+        <br>
+        <button type="submit">Agregar Estudiante</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

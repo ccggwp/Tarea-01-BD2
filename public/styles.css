@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .student-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .student-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .student-item form {
+    display: inline;
+  }
+  
+  .form-container {
+    margin-top: 20px;
+  }
+  
+  .form-container input[type="text"] {
+    width: calc(100% - 10px);
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .form-container button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+.student-item input[type="text"] {
+    display: none;
+  }
+  
